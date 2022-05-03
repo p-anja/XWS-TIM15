@@ -26,12 +26,12 @@ public class UserController {
         return repository.findAll();
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<User> getOne(@PathVariable int id){
         return repository.findById(id);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable int id){
         repository.deleteById(id);
         return "User deleted with id " + id;
